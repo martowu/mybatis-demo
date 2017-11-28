@@ -28,12 +28,15 @@ public class CarMapperTest {
 
 		this.carMapper.deleteAll();
 		this.cars = Arrays.asList(focus, civic);
+		System.out.print(cars);
 		this.cars.forEach(carMapper::insert);
+
 	}
 
 	@Test
 	public void test_selectById() {
 		Car car = this.carMapper.selectById(this.cars.iterator().next().getId());
+		//System.out.print(car);
 		Assert.assertNotNull(car);
 	}
 
